@@ -28,7 +28,6 @@ def remaining_balance(balance, annualInterestRate, monthlyPaymentRate):
         monthly_payment = monthlyPaymentRate * balance
         monthly_unpaid_balance = balance - monthly_payment
         balance = monthly_unpaid_balance + monthly_interest_rate * monthly_unpaid_balance
-        print(balance)
     
     return round(balance, 2)
 
