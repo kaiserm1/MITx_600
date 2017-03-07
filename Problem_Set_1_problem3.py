@@ -17,7 +17,7 @@ then your program should print
 Longest substring in alphabetical order is: abc
 """
 
-s = "abcabc" #'azcbobobegghakl'
+#s = "abcabc" #'azcbobobegghakl'
 longest_sub_string = ""
 
 for i in range(len(s)):
