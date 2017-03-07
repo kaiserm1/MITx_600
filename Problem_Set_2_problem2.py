@@ -17,18 +17,16 @@ def lowest_payment(balance, annualInterestRate):
     """
     
     
-    monthly_interest_rate = annualInterestRate / 12
+    monthly_interest_rate = annualInterestRate / 12.0
     lowest_payment_per_month = 10
     
-    def calculate_lowest_payment_rec(lowest_payment_per_month)
-        if balance <= 0:
-            return lowest_payment_per_month
-        else:
-            for i in range(12):
-                new_balance = balance - lowest_payment_per_month
-                balance = new_balance + new_balance * monthly_interest_rate
-                lowest_payment_per_month += 10
-                lowest_payment(balance, annualInterestRate)
+    while balance >= 0:
+        for i in range(12):
+            new_balance = balance - lowest_payment_per_month
+            balance = new_balance + new_balance * monthly_interest_rate
+        lowest_payment_per_month += 10
+        print(lowest_payment_per_month)
+    return lowest_payment_per_month
     
    
 print("Lowest Payment:", lowest_payment(balance, annualInterestRate))
