@@ -5,6 +5,8 @@ Created on Wed Mar  8 13:21:19 2017
 @author: maka_
 """
 
+
+    
 def lowest_payment(balance, annualInterestRate):
     """
     Input: balance as float - the outstanding balance on the credit card
@@ -14,25 +16,27 @@ def lowest_payment(balance, annualInterestRate):
     bisection search.
     """
     
-    def new_guess(lower_boundary, upper_boundary):
-        guess = (lower_boundary + upper_boundary) / 2
-        print(guess)
-        return guess
-    
     monthly_interest_rate = annualInterestRate / 12.0
     lower_boundary = balance / 12.0
     upper_boundary = (balance * (1 + monthly_interest_rate)**12) / 12.0
     epsilon = 0.01
-    guess = new_guess(lower_boundary, upper_boundary)
+    
+    guess = (lower_boundary + upper_boundary) / 2
     
     while abs(balance - (guess * 12)) > epsilon:
+        print(balance - (guess * 12))
+        print(guess)
         if balance - (guess * 12) > epsilon:
-            new_guess(guess, upper_boundary)
+            lower_boundary = guess
+            guess = (lower_boundary + upper_boundary) / 2
         else:
-            new_guess(lower_boundary, guess)
-    
-    return guess    
+            upper_boundary = guess
+            guess = (lower_boundary + upper_boundary) / 2
         
-    
+    return guess
+        
+balance = 320000
+annualInterestRate = 0.2
    
-print("Lowest Payment:", lowest_payment(balance, annualInterestRate))
+print("Lowest Payment:", round(lowest_payment(balance, annualInterestRate), 2))
+#Lowest Payment: 29157.09
