@@ -20,34 +20,26 @@ def lowest_payment(balance, annualInterestRate):
     lower_boundary = balance / 12.0
     upper_boundary = (balance * (1 + monthly_interest_rate)**12) / 12
     epsilon = 0.01  
-    guess = (lower_boundary + upper_boundary) / 2
-            
+    guess = (lower_boundary + upper_boundary) / 2      
     
-    while abs(balance) > epsilon:
+    
+    while True:
+        rest_balance = balance
+        
         for i in range(12):
-            new_balance = balance - guess
-            balance = new_balance + new_balance * monthly_interest_rate
-        print(balance)
-        if balance < -epsilon:
-            upper_boundary = guess
-            guess = (lower_boundary + upper_boundary) / 2
-        else:
+            new_balance = rest_balance - guess
+            rest_balance = new_balance + new_balance * monthly_interest_rate
+            
+        if abs(rest_balance) <= epsilon:
+            return guess
+        
+        elif rest_balance > epsilon:
             lower_boundary = guess
             guess = (lower_boundary + upper_boundary) / 2
         
-        
-    return guess
+        else:
+            upper_boundary = guess
+            guess = (lower_boundary + upper_boundary) / 2
     
 
-    
-        
-b1 = 320000
-a1 = 0.2
-
-b2 = 999999
-a2 = 0.18
-
-print("Lowest Payment:", round(lowest_payment(b1, a1), 2))
-print("Lowest Payment:", round(lowest_payment(b2, a2), 2))
-#Lowest Payment: 29157.09
-#Lowest Payment: 90325.03
+print("Lowest Payment:", round(lowest_payment(balance, annualInterestRate), 2))
