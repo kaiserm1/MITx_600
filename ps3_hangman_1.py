@@ -94,6 +94,7 @@ def get_user_input(lettersGuessed):
     '''
     print("- " * 13)
     print("You have " + str(guesses_left(lettersGuessed)) + " guesses left.")
+    print(getAvailableLetters(lettersGuessed), end='')
     return(input("Please guess a letter: ").lower())
     
 def guesses_left(lettersGuessed):
@@ -102,7 +103,7 @@ def guesses_left(lettersGuessed):
     
     returns: how many guesses are left (max = 8)
     '''
-    return 8 if lettersGuessed == [] else 8 - len(lettersGuessed)
+    return 8 - len(lettersGuessed)
 
 def evaluate_user_input(a_string, secretWord, lettersGuessed):
     '''
@@ -114,12 +115,12 @@ def evaluate_user_input(a_string, secretWord, lettersGuessed):
              if guess was used already, return "oh shucks, input again", 
              if guess is wrong, return "wrong guess"
     '''
-    if a_string in secretWord:
+    if a_string in lettersGuessed:
+        answer = "Oops! You've already guessed that letter: " + getGuessedWord(secretWord, lettersGuessed)
+        return (answer, lettersGuessed)
+    elif a_string in secretWord:
         lettersGuessed.append(a_string)
         answer = "Good guess: " + getGuessedWord(secretWord, lettersGuessed)
-        return (answer, lettersGuessed)
-    elif a_string in lettersGuessed:
-        answer = "Oops! You've already guessed that letter: " + getGuessedWord(secretWord, lettersGuessed)
         return (answer, lettersGuessed)
     else:
         lettersGuessed.append(a_string)
@@ -149,17 +150,18 @@ def hangman(secretWord):
     lettersGuessed = []
     print("Welcome to the game, Hangman!")
     print("I am thinking of a word, that is " + str(len(secretWord)) + " letters long.")
-    while guesses_left(lettersGuessed) >= 0:
+    while guesses_left(lettersGuessed) > 0:
         guess = get_user_input(lettersGuessed)
         print(evaluate_user_input(guess, secretWord, lettersGuessed)[0])
         if isWordGuessed(secretWord, lettersGuessed):
             print("- " * 13)
             print("Congratulations, you won!")
             break
+        elif guesses_left(lettersGuessed) == 0:
+            print("- " * 13)
+            print("Sorry, you ran out of guesses. The word was " + secretWord + ".")
         else:
             pass
-            
-        
 
 
 
@@ -168,7 +170,7 @@ def hangman(secretWord):
 # and run this file to test! (hint: you might want to pick your own
 # secretWord while you're testing)
 
-secretWord = "martin"
-# secretWord = chooseWord(wordlist).lower()
+#secretWord = "martin"
+secretWord = chooseWord(wordlist).lower()
 hangman(secretWord)
 
