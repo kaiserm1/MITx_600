@@ -138,17 +138,23 @@ def playGame(wordList):
                     break
                 else:
                     print("Invalid command.")                   
-        elif menu_input == "r":            
-            while True:
-                choice_computer_or_me = input("Enter u to have yourself play, c to have the computer play: ")            
-                if choice_computer_or_me == "u":
-                    playHand(hand, wordList, HAND_SIZE)
-                    break
-                elif choice_computer_or_me == "c":
-                    compPlayHand(hand, wordList, HAND_SIZE)
-                    break
-                else:
-                    print("Invalid command.")
+        elif menu_input == "r":
+            try:
+                hand
+            except:
+                print("You have not played a hand yet. Please play a new hand first!")
+                continue
+            else:
+                while True:
+                    choice_computer_or_me = input("Enter u to have yourself play, c to have the computer play: ")            
+                    if choice_computer_or_me == "u":
+                        playHand(hand, wordList, HAND_SIZE)
+                        break
+                    elif choice_computer_or_me == "c":
+                        compPlayHand(hand, wordList, HAND_SIZE)
+                        break
+                    else:
+                        print("Invalid command.")
         elif menu_input == "e":
             break
         else:

@@ -26,7 +26,6 @@ def isValidWord(word, hand, wordList):
                 else:
                     hand_copy[letter] -= 1
         except:
-            print("letter not in hand")
             return False
         else:
             return True

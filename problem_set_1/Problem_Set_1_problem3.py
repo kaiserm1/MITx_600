@@ -16,19 +16,18 @@ then your program should print
 
 Longest substring in alphabetical order is: abc
 """
-
-#s = "abcabc" #'azcbobobegghakl'
+s = 'zyxwvutsrqponmlkjihgfedcba'
 longest_sub_string = ""
-
 for i in range(len(s)):
-    sub_string = ""
+    sub_string = s[i]
     for j in range(i, len(s) - 1):
         if s[j] <= s[j + 1]:
             sub_string += s[j + 1]
             if len(sub_string) > len(longest_sub_string):
                 longest_sub_string = sub_string[:]
         else:
-            sub_string = s[j + 1]
-        
-print(longest_sub_string)  
+            sub_string = s[j + 1] 
+if longest_sub_string == "":
+    longest_sub_string = s[0]
+print("Longest substring in alphabetical order is: " + str(longest_sub_string))    
     

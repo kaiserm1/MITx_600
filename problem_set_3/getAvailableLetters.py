@@ -4,7 +4,6 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
 import string
 
 def getAvailableLetters(lettersGuessed):
@@ -19,7 +18,3 @@ def getAvailableLetters(lettersGuessed):
         available_letters = available_letters.split(letter)
         available_letters = new_available_letters.join(available_letters)
     return available_letters
-
-        
-lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
-print(getAvailableLetters(lettersGuessed))

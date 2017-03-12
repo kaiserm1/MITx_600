@@ -280,7 +280,13 @@ def playGame(wordList):
             hand = dealHand(HAND_SIZE)            
             playHand(hand, wordList, HAND_SIZE)        
         elif menu_input == "r":            
-            playHand(hand, wordList, HAND_SIZE)
+            try:
+                hand
+            except:
+                print("You have not played a hand yet. Please play a new hand first!")
+                continue
+            else:
+                playHand(hand, wordList, HAND_SIZE)
         elif menu_input == "e":
             break
         else:

@@ -4,7 +4,6 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
 def isWordGuessed(secretWord, lettersGuessed):
     '''
     secretWord: string, the word the user is guessing
@@ -14,10 +13,5 @@ def isWordGuessed(secretWord, lettersGuessed):
     '''
     for letter in secretWord:
         if letter not in lettersGuessed:
-            return False
-        
+            return False        
     return True
-
-secretWord = 'apple'
-lettersGuessed = ['a', 'p', 'l', 'e', 'r', 's']
-print(isWordGuessed(secretWord, lettersGuessed))
