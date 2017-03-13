@@ -43,8 +43,8 @@ class USResident(Person):
         status: a string, one of "citizen", "legal_resident", "illegal_resident"
         Raises a ValueError if status is not one of those 3 strings
         """
-        self.name = name
         self.status = status
+        super().__init__(name)
         if status not in ("citizen", "legal_resident", "illegal_resident"):
             raise ValueError
         
@@ -53,7 +53,3 @@ class USResident(Person):
         Returns the status
         """
         return self.status
-        
-martin = USResident('Martin Kaiser', 'illegal_resident')
-martin_status = martin.getStatus
-print(martin_status)
