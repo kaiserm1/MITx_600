@@ -14,6 +14,8 @@ def convert_to_mandarin(us_num):
     # If the number has a trailing 0, return translation without 0 at the end, 
     # else, return translation for all digits.
     else:
+        if us_num_string == '10':
+            return trans['10']
         if us_num_string[0] == '1':
             return trans['10'] + " " + trans[us_num_string[1]]
         return_string = trans[us_num_string[0]] + " " + trans['10']
