@@ -54,23 +54,25 @@ def greedy_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
+    # Copy the dictionary. That way we won't change it.
+    cows_copy = [(k, v) for k, v in dict.items(cows)]
     weight_loaded = 0
-    cows_copy = [(x, y) for x, y in dict.items(cows)]
+    # Sort cows by weight for the greedy heuristic
     cows_sorted = sorted(cows_copy, key = lambda cow: cow[1], reverse = True) 
     cows_left = cows_sorted[:]
-    cows_loaded = []
-    trips_with_cows = []
-    while cows_left:    
+    cows_loaded, trips_with_cows = [], []
+    # Add cows to trip until limit is reached, remove those cows from
+    # cows that are left to load.
+    while cows_left != []:    
         for cow in cows_sorted:
-            if weight_loaded + int(cow[1]) <= limit:
+            if weight_loaded + cow[1] <= limit:
                 cows_loaded.append(cow[0])
-                weight_loaded += int(cow[1])
+                weight_loaded += cow[1]
                 cows_left.remove(cow)
-            else:
-                continue
         trips_with_cows.append(cows_loaded)
         cows_loaded = []
-        print(trips_with_cows)
+        weight_loaded = 0
+        cows_sorted = cows_left[:]
     return trips_with_cows
 
 
@@ -95,9 +97,29 @@ def brute_force_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
-    # TODO: Your code here
-    pass
-
+    transports = get_partitions(cows.keys())
+    legal_transports = []
+    # Check all single trips for a transport.
+    for transport in transports:
+        # If the load is higher than the limit for a single trip, the whole
+        # transport is invalid.
+        legal_trips = []
+        total_weight_of_trip = 0
+        for trip in transport:
+            total_weight_of_trip = 0
+            for cow in trip:
+                total_weight_of_trip += cows[cow]
+            if total_weight_of_trip <= limit:
+                legal_trips.append(trip)
+            else:
+                break
+        # All trips of the transport are within the weight limit.
+        if len(legal_trips) == len(transport):
+            legal_transports.append(legal_trips)
+    # Pick the transport with lowest amount of trips
+    best_transport = sorted(legal_transports, key = lambda x: len(x))
+    return best_transport[0]
+        
         
 # Problem 3
 def compare_cow_transport_algorithms():
@@ -113,8 +135,18 @@ def compare_cow_transport_algorithms():
     Returns:
     Does not return anything.
     """
-    # TODO: Your code here
-    pass
+    start_greedy = time.time()
+    greedy_result = greedy_cow_transport(cows, limit)
+    end_greedy = time.time()
+    start_brute = time.time()
+    brute_result = brute_force_cow_transport(cows, limit)
+    end_brute = time.time()
+    greedy_time = (end_greedy - start_greedy)
+    brute_time = (end_brute - start_brute)
+    difference_time = abs(greedy_time - brute_time)
+    
+    print('Number of trips for:\n  |---> greedy: {}\n  |---> brute: {}'.format(len(greedy_result),len(brute_result)))
+    print('Time elapsed for:\n  |---> greedy: {}\n  |---> brute: {}\n  |---> Difference: {}'.format(greedy_time, brute_time, difference_time))
 
 
 """
@@ -124,9 +156,10 @@ lines to print the result of your problem.
 """
 
 cows = load_cows("ps1_cow_data.txt")
+#cows = {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}
 limit=10
 
-print(greedy_cow_transport(cows, limit))
-print(brute_force_cow_transport(cows, limit))
+#print(greedy_cow_transport(cows, limit))
+#print(brute_force_cow_transport(cows, limit))
 
-
+compare_cow_transport_algorithms()
