@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99ac4ae9-578f-4892-9675-40e0c84c6bde" name="Default" comment="" />
+    <list default="true" id="99ac4ae9-578f-4892-9675-40e0c84c6bde" name="Default" comment="ps2">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MITx_6_00_2x/Problem Set 2/ps2.py" afterPath="$PROJECT_DIR$/MITx_6_00_2x/Problem Set 2/ps2.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,50 +24,10 @@
       <file leaf-file-name="ps2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MITx_6_00_2x/Problem Set 2/ps2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="280" column="40" lean-forward="false" selection-start-line="280" selection-start-column="40" selection-end-line="280" selection-end-column="40" />
+            <state relative-caret-position="425">
+              <caret line="265" column="52" lean-forward="true" selection-start-line="265" selection-start-column="52" selection-end-line="265" selection-end-column="52" />
               <folding>
                 <element signature="e#44#55#0" expanded="true" />
-                <element signature="e#106#123#0" expanded="false" />
-                <element signature="e#316#391#1" expanded="false" />
-                <element signature="e#431#540#0" expanded="false" />
-                <element signature="e#431#502#1" expanded="false" />
-                <element signature="e#570#583#0" expanded="false" />
-                <element signature="e#613#626#0" expanded="false" />
-                <element signature="e#680#1139#1" expanded="false" />
-                <element signature="e#1548#1590#0" expanded="false" />
-                <element signature="e#1943#2242#0" expanded="false" />
-                <element signature="e#1943#2156#1" expanded="false" />
-                <element signature="e#2292#2461#1" expanded="false" />
-                <element signature="e#2651#2898#1" expanded="false" />
-                <element signature="e#2977#3115#0" expanded="false" />
-                <element signature="e#2977#3075#1" expanded="false" />
-                <element signature="e#3159#3300#0" expanded="false" />
-                <element signature="e#3159#3263#1" expanded="false" />
-                <element signature="e#3343#3578#0" expanded="false" />
-                <element signature="e#3343#3445#1" expanded="false" />
-                <element signature="e#3918#5930#0" expanded="false" />
-                <element signature="e#4288#4745#0" expanded="false" />
-                <element signature="e#4288#4582#1" expanded="false" />
-                <element signature="e#4788#4939#0" expanded="false" />
-                <element signature="e#4788#4910#1" expanded="false" />
-                <element signature="e#4982#5181#0" expanded="false" />
-                <element signature="e#4982#5151#1" expanded="false" />
-                <element signature="e#5233#5400#0" expanded="false" />
-                <element signature="e#5233#5337#1" expanded="false" />
-                <element signature="e#5697#5927#0" expanded="false" />
-                <element signature="e#5697#5871#1" expanded="false" />
-                <element signature="e#8740#9147#0" expanded="false" />
-                <element signature="e#8740#8897#1" expanded="false" />
-                <element signature="e#8945#9147#0" expanded="false" />
-                <element signature="e#8945#9113#1" expanded="false" />
-                <element signature="e#9194#9834#0" expanded="false" />
-                <element signature="e#9194#9276#1" expanded="false" />
-                <element signature="e#9391#9607#0" expanded="false" />
-                <element signature="e#9881#10620#0" expanded="false" />
-                <element signature="e#9881#9963#1" expanded="false" />
-                <element signature="e#10062#10397#0" expanded="false" />
-                <element signature="e#10622#10637#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -176,6 +139,116 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/MITx_6_00_2x/Problem Set 1/#ps1.py#</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Python.ps2">
     <configuration default="false" name="ps2" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -372,7 +445,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18018967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33802816" sideWeight="0.5052687" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -425,50 +498,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MITx_6_00_2x/Problem Set 2/ps2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="280" column="40" lean-forward="false" selection-start-line="280" selection-start-column="40" selection-end-line="280" selection-end-column="40" />
+        <state relative-caret-position="425">
+          <caret line="265" column="52" lean-forward="true" selection-start-line="265" selection-start-column="52" selection-end-line="265" selection-end-column="52" />
           <folding>
             <element signature="e#44#55#0" expanded="true" />
-            <element signature="e#106#123#0" expanded="false" />
-            <element signature="e#316#391#1" expanded="false" />
-            <element signature="e#431#540#0" expanded="false" />
-            <element signature="e#431#502#1" expanded="false" />
-            <element signature="e#570#583#0" expanded="false" />
-            <element signature="e#613#626#0" expanded="false" />
-            <element signature="e#680#1139#1" expanded="false" />
-            <element signature="e#1548#1590#0" expanded="false" />
-            <element signature="e#1943#2242#0" expanded="false" />
-            <element signature="e#1943#2156#1" expanded="false" />
-            <element signature="e#2292#2461#1" expanded="false" />
-            <element signature="e#2651#2898#1" expanded="false" />
-            <element signature="e#2977#3115#0" expanded="false" />
-            <element signature="e#2977#3075#1" expanded="false" />
-            <element signature="e#3159#3300#0" expanded="false" />
-            <element signature="e#3159#3263#1" expanded="false" />
-            <element signature="e#3343#3578#0" expanded="false" />
-            <element signature="e#3343#3445#1" expanded="false" />
-            <element signature="e#3918#5930#0" expanded="false" />
-            <element signature="e#4288#4745#0" expanded="false" />
-            <element signature="e#4288#4582#1" expanded="false" />
-            <element signature="e#4788#4939#0" expanded="false" />
-            <element signature="e#4788#4910#1" expanded="false" />
-            <element signature="e#4982#5181#0" expanded="false" />
-            <element signature="e#4982#5151#1" expanded="false" />
-            <element signature="e#5233#5400#0" expanded="false" />
-            <element signature="e#5233#5337#1" expanded="false" />
-            <element signature="e#5697#5927#0" expanded="false" />
-            <element signature="e#5697#5871#1" expanded="false" />
-            <element signature="e#8740#9147#0" expanded="false" />
-            <element signature="e#8740#8897#1" expanded="false" />
-            <element signature="e#8945#9147#0" expanded="false" />
-            <element signature="e#8945#9113#1" expanded="false" />
-            <element signature="e#9194#9834#0" expanded="false" />
-            <element signature="e#9194#9276#1" expanded="false" />
-            <element signature="e#9391#9607#0" expanded="false" />
-            <element signature="e#9881#10620#0" expanded="false" />
-            <element signature="e#9881#9963#1" expanded="false" />
-            <element signature="e#10062#10397#0" expanded="false" />
-            <element signature="e#10622#10637#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -237,8 +237,10 @@ class StandardRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
+        # If the new position is not inside the room, change direction
         while not self.room.isPositionInRoom(Position.getNewPosition(self.getRobotPosition(), self.direction, self.speed)):
             self.setRobotDirection(random.randint(0, 360))
+        # New position is inside the room. Let the robot go there and clean
         self.setRobotPosition(Position.getNewPosition(self.getRobotPosition(), self.direction, self.speed))
         self.room.cleanTileAtPosition(self.getRobotPosition())
 
@@ -268,19 +270,16 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     """
     trial_duration = []
     tiles = width * height
-    anim = ps2_visualize.RobotVisualization(num_robots, width, height)  # for simulation
     for robot in range(num_robots):
         robot = robot_type(RectangularRoom(width, height), speed)
         for trial in range(num_trials):
             counter = 0
-            robot.room.clean_tiles = []
+            robot.room.clean_tiles = [robot.getRobotDirection()]
             while len(robot.room.clean_tiles) < math.ceil(tiles * min_coverage):
-                anim.update(robot.room, robots) # for simulation
                 robot.updatePositionAndClean()
                 counter += 1
-            anim.done() # for simulation
             trial_duration.append(counter)
-    return round(sum(trial_duration) / float(len(trial_duration)), 2)
+    return sum(trial_duration) / float(len(trial_duration))
 
 
 # Uncomment this line to see how much your simulation takes on average
