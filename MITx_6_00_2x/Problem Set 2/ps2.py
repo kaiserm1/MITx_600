@@ -7,7 +7,7 @@ import ps2_visualize
 import pylab
 
 # For Python 3.5:
-# from ps2_verify_movement35 import testRobotMovement
+from ps2_verify_movement35 import testRobotMovement
 
 
 # If you get a "Bad magic number" ImportError, you are not using Python 3.5
@@ -246,7 +246,7 @@ class StandardRobot(Robot):
 
 
 # Uncomment this line to see your implementation of StandardRobot in action!
-## testRobotMovement(StandardRobot, RectangularRoom)
+#testRobotMovement(StandardRobot, RectangularRoom)
 
 
 # === Problem 4
@@ -270,20 +270,28 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     """
     trial_duration = []
     tiles = width * height
-    for robot in range(num_robots):
-        robot = robot_type(RectangularRoom(width, height), speed)
-        for trial in range(num_trials):
-            counter = 0
-            robot.room.clean_tiles = [robot.getRobotDirection()]
-            while len(robot.room.clean_tiles) < math.ceil(tiles * min_coverage):
-                robot.updatePositionAndClean()
+    for trial in range(num_trials):
+#        anim = ps2_visualize.RobotVisualization(num_robots, width, height) # Animation
+        robots = []
+        counter = 0
+        if min_coverage == 0:
+            return 0.0
+        else:
+            room = RectangularRoom(width, height)
+            for num in range(num_robots):
+                robots.append(robot_type(room, speed))
+            while room.getNumCleanedTiles() < math.ceil(tiles * min_coverage):
+#                anim.update(room, robots) # Animation
+                for robot in robots:
+                    robot.updatePositionAndClean()
                 counter += 1
             trial_duration.append(counter)
+#            anim.done() # Animation
     return sum(trial_duration) / float(len(trial_duration))
 
 
 # Uncomment this line to see how much your simulation takes on average
-print(runSimulation(1, 1.0, 10, 10, 0.75, 30, StandardRobot))
+#print(runSimulation(3, 1.0, 10, 10, 0.75, 1, StandardRobot))
 
 
 # === Problem 5
@@ -292,6 +300,9 @@ class RandomWalkRobot(Robot):
     A RandomWalkRobot is a robot with the "random walk" movement strategy: it
     chooses a new direction at random at the end of each time-step.
     """
+    def __init__(self, room, speed):
+        Robot.__init__(self, room, speed)
+        self.room.cleanTileAtPosition(self.getRobotPosition())
 
     def updatePositionAndClean(self):
         """
@@ -300,7 +311,14 @@ class RandomWalkRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        raise NotImplementedError
+        # If the new position is not inside the room, try again
+        while not self.room.isPositionInRoom(
+                Position.getNewPosition(self.getRobotPosition(), self.direction, self.speed)):
+            self.setRobotDirection(random.randint(0, 360))
+        # New position is inside the room. Let the robot go there, change direction and clean
+        self.setRobotPosition(Position.getNewPosition(self.getRobotPosition(), self.direction, self.speed))
+        self.setRobotDirection(random.randint(0,360))
+        self.room.cleanTileAtPosition(self.getRobotPosition())
 
 
 def showPlot1(title, x_label, y_label):
@@ -354,10 +372,11 @@ def showPlot2(title, x_label, y_label):
 #
 #       (... your call here ...)
 #
-
+#showPlot1('Comparison Standard vs. Random Walk', 'Number of Robots', 'Timesteps')
 #
 # 2) Write a function call to showPlot2 that generates an appropriately-labeled
 #     plot.
 #
 #       (... your call here ...)
 #
+showPlot2('test', 'x', 'Time Steps')
