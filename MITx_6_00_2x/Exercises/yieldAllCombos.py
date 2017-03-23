@@ -1,16 +1,20 @@
-def yieldAllCombos(items):
-    """
-        Generates all combinations of N items into two bags, whereby each 
-        item is in one or zero bags.
+""" This module yields a tuple for all possible combos for a list of items.
 
-        Yields a tuple, (bag1, bag2), where each bag is represented as a list 
-        of which item(s) are in each bag.
+yieldAllCombos(items) -- Generate all possible combos.
+"""
+def yieldAllCombos(items):
+    """ Generates all combinations of N items into two bags, whereby each
+    item is in one or zero bags.
+
+    Keyword arguments:
+    items -- list of items
+    Yields a tuple, (bag1, bag2), where each bag is represented as a list
+    of which item(s) are in each bag.
     """
     N = len(items)
     # Enumerate the 3**N possible combinations
     for i in range(3**N):
-        bag1 = []
-        bag2 = []
+        bag1, bag2 = [], []
         for j in range(N):
             if (i // 3**j) % 3 == 1:
                 bag1.append(items[j])
