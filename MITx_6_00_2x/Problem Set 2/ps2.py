@@ -379,4 +379,4 @@ def showPlot2(title, x_label, y_label):
 #
 #       (... your call here ...)
 #
-showPlot2('test', 'x', 'Time Steps')
+#showPlot2('Effect of different room layouts', 'Aspect Ratio', 'Time Steps')
