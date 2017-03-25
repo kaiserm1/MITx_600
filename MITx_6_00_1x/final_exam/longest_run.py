@@ -18,7 +18,7 @@ def longest_run(L):
                     max_length = len(L[i:j])
                     start = i
                     end = j
-            elif L[i:j] == sorted(L[i:j], reverse = True):
+            elif L[i:j] == sorted(L[i:j], reverse=True):
                 if len(L[i:j]) > max_length:
                     max_length = len(L[i:j])
                     start = i
