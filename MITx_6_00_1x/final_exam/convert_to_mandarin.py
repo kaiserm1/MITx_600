@@ -5,7 +5,6 @@ def convert_to_mandarin(us_num):
     '''
     # Convert int to str so we can access each digit.
     us_num_string = str(us_num)
-    # If the number is 0 just return value for 0.
     if us_num == 0:
         return trans['0']
     # If the number is single digit, just return the value for single digit.
