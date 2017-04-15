@@ -196,7 +196,6 @@ def simulationWithoutDrug(numViruses, maxPop, maxBirthProb, clearProb,
         # instantiate Patient with numViruses Viruses and maxPop
         patients_list.append(Patient(viruses_list, maxPop))
 
-
     # run simulation: execute 300 timesteps: call patient.update() 300 times
     steps = 300
     virus_population_per_patient_per_timestep = []
@@ -217,7 +216,6 @@ def simulationWithoutDrug(numViruses, maxPop, maxBirthProb, clearProb,
     pylab.ylabel('Average Virus Population')
     pylab.legend()
     pylab.show()
-
 
 
 #
@@ -444,6 +442,7 @@ class TreatedPatient(Patient):
         self.viruses += virus_children
         return self.getTotalPop()
 
+
 #
 # PROBLEM 4
 #
@@ -501,9 +500,11 @@ def simulationWithDrug(numViruses, maxPop, maxBirthProb, clearProb, resistances,
 
     # create y-values of averages for timesteps in trials for plot
     averages_of_virus_population_per_timesteps = list(np.mean(virus_population_per_patient_per_timestep, axis=0))
-    averages_of_resistant_virus_population_per_timesteps = list(np.mean(resistant_virus_population_per_patient_per_timestep, axis=0))
+    averages_of_resistant_virus_population_per_timesteps = list(
+        np.mean(resistant_virus_population_per_patient_per_timestep, axis=0))
     avg_vpop_grader = [float('{0:.1f}'.format(number)) for number in averages_of_virus_population_per_timesteps]
-    avg_rvpop_grader = [float('{0:.1f}'.format(number)) for number in averages_of_resistant_virus_population_per_timesteps]
+    avg_rvpop_grader = [float('{0:.1f}'.format(number)) for number in
+                        averages_of_resistant_virus_population_per_timesteps]
     # create graph virus pop over timesteps
     pylab.figure()
     pylab.plot(avg_vpop_grader, label='Total')
@@ -514,6 +515,8 @@ def simulationWithDrug(numViruses, maxPop, maxBirthProb, clearProb, resistances,
     pylab.legend()
     pylab.show()
 
+
+simulationWithDrug(100, 1000, 0.1, 0.05, {'guttagonol': False}, 0.005, 100)
 # simulationWithDrug(1, 10, 1.0, 0.0, {}, 1.0, 5)
 # simulationWithDrug(1, 20, 1.0, 0.0, {"guttagonol": True}, 1.0, 5)
 # simulationWithDrug(75, 100, .8, 0.1, {"guttagonol": True}, 0.8, 1)
